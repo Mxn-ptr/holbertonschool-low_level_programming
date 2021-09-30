@@ -2,8 +2,10 @@
 #include <unistd.h>
 
 /**
-* Utilisation de la fonction write
-*/
+ * main - Entry point
+ *
+ * Return: Always 1 (Success)
+ */
 
 int main(void)
 {
