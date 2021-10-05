@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	unsigned a, b, r;
+	unsigned long int a, b, r;
 	int i;
 
 	for (i = 0; i < 1024; i++)
@@ -22,6 +22,6 @@ int main(void)
 		}
 	}
 	r = a + b;
-	printf("%d\n", r);
+	printf("%lu\n", r);
 	return (0);
 }
