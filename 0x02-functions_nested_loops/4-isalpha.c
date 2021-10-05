@@ -2,6 +2,7 @@
 
 /**
  * _isalpha - checks for alphacase character
+ *@c : character to check
  * Return: 1 if the character is alphacase, else 0
  */
 
