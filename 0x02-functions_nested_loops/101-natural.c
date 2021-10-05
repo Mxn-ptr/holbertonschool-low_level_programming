@@ -7,7 +7,8 @@
 
 int main(void)
 {
-	int a, b, r, i;
+	unsigned a, b, r;
+	int i;
 
 	for (i = 0; i < 1024; i++)
 	{
