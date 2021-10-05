@@ -21,6 +21,6 @@ int main(void)
 		}
 	}
 	r = a + b;
-	printf("%d\n", i);
+	printf("%d\n", r);
 	return (0);
 }
