@@ -8,25 +8,20 @@
 
 int main(void)
 {
-	long int a, b, resultat;
 	int i;
+	unsigned long num1 = 0, num2 = 1, resultat;
 
-	a = 1;
-	b = 2;
-
-	for (i = 1; i < 50; ++i)
+	for (i = 0; i < 50; i++)
 	{
-		if (a != 20365011074)
-		{
-			printf("%ld, ", a);
-		}
+		resultat = num1 + num2;
+		printf("%lu", resultat);
+		num1 = num2;
+		num2 = resultat;
+
+		if (i == 49)
+			printf("\n");
 		else
-		{
-			printf("%ld\n", a);
-		}
-		resultat = a + b;
-		a = b;
-		b = resultat;
+			printf(", ");
 	}
 	return (0);
 }
