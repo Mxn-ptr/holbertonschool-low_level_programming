@@ -2,6 +2,7 @@
 
 /**
  * times_table - prints the 9 times tables
+ * @a, @n, @r: integers
  */
 
 void times_table(void)
