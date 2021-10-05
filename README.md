@@ -1,1 +1,1 @@
-Project of Holbertonschool
+Project of Holberton School
