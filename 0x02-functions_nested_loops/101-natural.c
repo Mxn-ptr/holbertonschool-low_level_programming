@@ -10,7 +10,7 @@ int main(void)
 	unsigned long int a, b, r;
 	int i;
 
-	for (i = 0; i < 1024; i++)
+	for (i = 0; i < 1024; ++i)
 	{
 		if ((i % 3) == 0)
 		{
