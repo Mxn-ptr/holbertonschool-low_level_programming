@@ -7,21 +7,13 @@
 
 int main(void)
 {
-	unsigned long int a, b, r;
-	int i;
+	int i, a;
 
-	for (i = 0; i < 1024; ++i)
+	for (i = 0; i < 1024; i++)
 	{
-		if ((i % 3) == 0)
-		{
-			a = a + i;
-		}
-		else if ((i % 5) == 0)
-		{
-			b = b + i;
-		}
+		if ((i % 3) == 0 || (i % 5) == 0)
+			a += i;
 	}
-	r = a + b;
-	printf("%lu\n", r);
+	printf("%d\n", sum);
 	return (0);
 }
