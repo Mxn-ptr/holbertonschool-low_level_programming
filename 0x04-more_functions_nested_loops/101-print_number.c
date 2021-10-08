@@ -7,33 +7,34 @@
 
 void print_number(int n)
 {
-	if (n == 0)
+	unsigned int m = n;
+	if (m == 0)
 		_putchar(48);
 	if (n < 0)
 	{
 		n = -n;
 		_putchar('-');
 	}
-		if (n < 10)
+		if (m < 10)
 		{
-			_putchar(n);
+			_putchar(m);
 		}
-		else if (n >= 10 && n < 100)
+		else if (m >= 10 && m < 100)
 		{
-			_putchar((n / 10) + '0');
-			_putchar((n % 10) + '0');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
 		}
-		else if (n >= 100 && n < 1000)
+		else if (m >= 100 && m < 1000)
 		{
-			_putchar((n / 100) + '0');
-			_putchar(((n / 10) % 10) + '0');
-			_putchar((n % 10) + '0');
+			_putchar((m / 100) + '0');
+			_putchar(((m / 10) % 10) + '0');
+			_putchar((m % 10) + '0');
 		}
-		else if (n >= 1000 && n < 10000)
+		else if (m >= 1000 && m < 10000)
 		{
-			_putchar((n / 1000) + '0');
-			_putchar(((n / 100) % 10) + '0');
-			_putchar(((n / 10) % 10) + '0');
-			_putchar((n % 10) + '0');
+			_putchar((m / 1000) + '0');
+			_putchar(((m / 100) % 10) + '0');
+			_putchar(((m / 10) % 10) + '0');
+			_putchar((m % 10) + '0');
 		}
 }
