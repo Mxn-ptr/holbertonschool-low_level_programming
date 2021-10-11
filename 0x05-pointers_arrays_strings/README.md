@@ -1,1 +1,1 @@
-Learn pointers and strings !
+Learn pointers !
