@@ -3,7 +3,7 @@
 
 /**
  * print_array - print n elemeent of an array of integers
- * @*a: string to print
+ * @a: string to print
  * @n: length of string
  */
 
