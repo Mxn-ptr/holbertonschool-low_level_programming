@@ -17,3 +17,7 @@ int is_prime_number(int n);
 int function_help(int n, int i);
 
 int prime_number(int n, int i);
+
+int is_palindrome(char *s);
+
+int palindrome(char *s, int n, int i, int limit);
