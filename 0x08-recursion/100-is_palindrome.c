@@ -8,30 +8,40 @@
 
 int is_palindrome(char *s)
 {
-	int i, limit;
+	return (palindrome(s, 0, _strlen_recursion(s)));
+}
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	limit = i;
-	i--;
-	return (palindrome(s, 0, i, limit / 2));
+/**
+ * _strlen_recursion - return the length of a string
+ * @s: string to check
+ * Return: length of the string
+ */
+
+int _strlen_recursion(char *s)
+{
+	int n = 0;
+
+	if (*s)
+	{
+		n++;
+		n += _strlen_recursion(s + 1);
+	}
+	return (n);
 }
 
 /**
  * palindrome - function for help
  * @s: string
  * @n: incrementation
- * @i: incrementation
  * @limit : limit
  * Return: 0
  */
 
-int palindrome(char *s, int n, int i, int limit)
+int palindrome(char *s, int n, int limit)
 {
-	if (s[n] != s[i] && n < limit)
+	if (*(s + n) != *(s + limit - 1))
 		return (0);
-	else if (s[n] == s[i] && n < limit)
-		return (palindrome(s, n + 1, i - 1, limit));
-	else
+	if (n >= limit)
 		return (1);
+	return (palindrome(s, n + 1, limit - 1));
 }

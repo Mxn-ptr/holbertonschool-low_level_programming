@@ -20,4 +20,4 @@ int prime_number(int n, int i);
 
 int is_palindrome(char *s);
 
-int palindrome(char *s, int n, int i, int limit);
+int palindrome(char *s, int n, int limit);
