@@ -13,7 +13,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s3;
 	int i;
-	unsigned int j;
+	unsigned int len = n, j;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -21,21 +21,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	for (i = 0; s1[i] != '\0'; i++)
-		;
+		len++;
 
-	s3 = malloc(sizeof(char) * (i + n + 1));
+	s3 = malloc(sizeof(char) * (len + 1));
 
 	if (s3 == NULL)
 		return (NULL);
+	len = 0;
 
 	for (i = 0; s1[i] != '\0'; i++)
-		s3[i] = s1[i];
+		s3[len++] = s1[i];
 
 	for (j = 0; j < n && s2[j] != '\0'; j++)
 	{
-		s3[i] = s2[j];
+		s3[len++] = s2[j];
 		i++;
 	}
-	s3[i] = '\0';
+	s3[len] = '\0';
 	return (s3);
 }
