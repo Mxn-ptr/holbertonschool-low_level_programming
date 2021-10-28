@@ -29,10 +29,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	len = 0;
 
-	for (i = 0; s1[i] != '\0'; i++)
+	for (i = 0; s1[i]; i++)
 		s3[len++] = s1[i];
 
-	for (j = 0; j < n && s2[j] != '\0'; j++)
+	for (j = 0; j < n && s2[j]; j++)
 	{
 		s3[len++] = s2[j];
 		i++;
