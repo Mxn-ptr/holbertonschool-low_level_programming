@@ -9,7 +9,7 @@
 void free_list(list_t *head)
 {
 	list_t *p;
-	
+
 	while (head)
 	{
 		p = head->next;
@@ -18,4 +18,3 @@ void free_list(list_t *head)
 		head = p;
 	}
 }
-		
