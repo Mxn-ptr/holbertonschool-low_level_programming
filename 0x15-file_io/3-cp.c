@@ -34,13 +34,15 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fd_to < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", argv[2]);
-		exit(99);
-	}
 	while ((letters = read(fd_from, buf, BUFSIZE)) > 0)
-		write(fd_to, buf, letters);
+	{
+		if (fd_to < 0 || write(fd_to, buf, letters) != letters)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", argv[2]);
+			close(fd_to);
+			exit(99);
+		}
+	}
 	close_from = close(fd_from);
 	close_to = close(fd_to);
 	if (close_from < 0)
