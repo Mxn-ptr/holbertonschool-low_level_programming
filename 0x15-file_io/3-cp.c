@@ -16,7 +16,7 @@ void clean_buf(char *buf);
 
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, letters;
+	int fd_from, fd_to, letters, close_from, close_to;
 	char buf[BUFSIZE];
 
 	clean_buf(buf);
@@ -41,19 +41,21 @@ int main(int argc, char **argv)
 	}
 	while ((letters = read(fd_from, buf, BUFSIZE)) > 0)
 		write(fd_to, buf, letters);
-	if (close(fd_from) < 0)
+	close_from = close(fd_from);
+	close_to = close(fd_to);
+	if (close_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
-	if (close(fd_to) < 0)
+	if (close_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	return (0);
 }
-		
+
 /**
  * clean_buf - clean buffer
  * @buf: the buffer to clean
