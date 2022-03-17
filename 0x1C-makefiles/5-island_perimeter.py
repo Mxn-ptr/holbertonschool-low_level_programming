@@ -2,6 +2,7 @@
 """ Defines a perimeter island function """
 
 def island_perimeter(grid):
+    """ Returns the perimeter of an island: 0 is water, 1 is dirt"""
     width = len(grid[0])
     height = len(grid)
     perimeter = 0
